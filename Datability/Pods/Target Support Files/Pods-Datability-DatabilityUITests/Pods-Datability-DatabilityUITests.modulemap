@@ -1,0 +1,6 @@
+framework module Pods_Datability_DatabilityUITests {
+  umbrella header "Pods-Datability-DatabilityUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,6 +16,10 @@
 		02ABD79028C2C2ED00A7D455 /* DatabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD78F28C2C2ED00A7D455 /* DatabilityTests.swift */; };
 		02ABD79A28C2C2ED00A7D455 /* DatabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */; };
 		02ABD79C28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */; };
+		02DD1A1E28C2C61500D6630A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02DD1A1D28C2C61400D6630A /* GoogleService-Info.plist */; };
+		2C06D0E7D9F461DECF2439AF /* Pods_DatabilityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF325D2831AAE66878F99856 /* Pods_DatabilityTests.framework */; };
+		702603B34BC11E33DE79B29E /* Pods_Datability_DatabilityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */; };
+		D0D283459E7ABE8ED992D5FA /* Pods_Datability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F79FDE3784759D96BFC034 /* Pods_Datability.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,16 @@
 		02ABD79528C2C2ED00A7D455 /* DatabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITests.swift; sourceTree = "<group>"; };
 		02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02DD1A1D28C2C61400D6630A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21560270074302CB1A9FFBD8 /* Pods-Datability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datability.debug.xcconfig"; path = "Target Support Files/Pods-Datability/Pods-Datability.debug.xcconfig"; sourceTree = "<group>"; };
+		25B9D97C35E33989FB519F90 /* Pods-DatabilityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatabilityTests.release.xcconfig"; path = "Target Support Files/Pods-DatabilityTests/Pods-DatabilityTests.release.xcconfig"; sourceTree = "<group>"; };
+		305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datability_DatabilityUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62DCD164EBE6E2009F24362B /* Pods-Datability-DatabilityUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datability-DatabilityUITests.release.xcconfig"; path = "Target Support Files/Pods-Datability-DatabilityUITests/Pods-Datability-DatabilityUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF325D2831AAE66878F99856 /* Pods_DatabilityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatabilityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E8939A588DC295E51585FC /* Pods-Datability.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datability.release.xcconfig"; path = "Target Support Files/Pods-Datability/Pods-Datability.release.xcconfig"; sourceTree = "<group>"; };
+		C5F79FDE3784759D96BFC034 /* Pods_Datability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F22F890DE29D2996A7F859 /* Pods-DatabilityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatabilityTests.debug.xcconfig"; path = "Target Support Files/Pods-DatabilityTests/Pods-DatabilityTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D14EE42813C206D889758C1E /* Pods-Datability-DatabilityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datability-DatabilityUITests.debug.xcconfig"; path = "Target Support Files/Pods-Datability-DatabilityUITests/Pods-Datability-DatabilityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D283459E7ABE8ED992D5FA /* Pods_Datability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C06D0E7D9F461DECF2439AF /* Pods_DatabilityTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702603B34BC11E33DE79B29E /* Pods_Datability_DatabilityUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +100,8 @@
 				02ABD78E28C2C2ED00A7D455 /* DatabilityTests */,
 				02ABD79828C2C2ED00A7D455 /* DatabilityUITests */,
 				02ABD77628C2C2E800A7D455 /* Products */,
+				EB7195DDC25A676ABA2DD21A /* Pods */,
+				DF2AB74EAA40BAF63EFF59C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +124,7 @@
 				02ABD77E28C2C2E800A7D455 /* Main.storyboard */,
 				02ABD78128C2C2ED00A7D455 /* Assets.xcassets */,
 				02ABD78328C2C2ED00A7D455 /* LaunchScreen.storyboard */,
+				02DD1A1D28C2C61400D6630A /* GoogleService-Info.plist */,
 				02ABD78628C2C2ED00A7D455 /* Info.plist */,
 			);
 			path = Datability;
@@ -127,6 +147,30 @@
 			path = DatabilityUITests;
 			sourceTree = "<group>";
 		};
+		DF2AB74EAA40BAF63EFF59C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5F79FDE3784759D96BFC034 /* Pods_Datability.framework */,
+				305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */,
+				AF325D2831AAE66878F99856 /* Pods_DatabilityTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB7195DDC25A676ABA2DD21A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21560270074302CB1A9FFBD8 /* Pods-Datability.debug.xcconfig */,
+				C3E8939A588DC295E51585FC /* Pods-Datability.release.xcconfig */,
+				D14EE42813C206D889758C1E /* Pods-Datability-DatabilityUITests.debug.xcconfig */,
+				62DCD164EBE6E2009F24362B /* Pods-Datability-DatabilityUITests.release.xcconfig */,
+				C8F22F890DE29D2996A7F859 /* Pods-DatabilityTests.debug.xcconfig */,
+				25B9D97C35E33989FB519F90 /* Pods-DatabilityTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02ABD79F28C2C2ED00A7D455 /* Build configuration list for PBXNativeTarget "Datability" */;
 			buildPhases = (
+				C1648DC56D4EE8A49CBD7B85 /* [CP] Check Pods Manifest.lock */,
 				02ABD77128C2C2E800A7D455 /* Sources */,
 				02ABD77228C2C2E800A7D455 /* Frameworks */,
 				02ABD77328C2C2E800A7D455 /* Resources */,
+				55025377FEFD5E734ADE3E12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02ABD7A228C2C2ED00A7D455 /* Build configuration list for PBXNativeTarget "DatabilityTests" */;
 			buildPhases = (
+				AE3F8302D92CB0BE6A46124D /* [CP] Check Pods Manifest.lock */,
 				02ABD78728C2C2ED00A7D455 /* Sources */,
 				02ABD78828C2C2ED00A7D455 /* Frameworks */,
 				02ABD78928C2C2ED00A7D455 /* Resources */,
@@ -169,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02ABD7A528C2C2ED00A7D455 /* Build configuration list for PBXNativeTarget "DatabilityUITests" */;
 			buildPhases = (
+				C9E81D54E6A36B2CBC07D276 /* [CP] Check Pods Manifest.lock */,
 				02ABD79128C2C2ED00A7D455 /* Sources */,
 				02ABD79228C2C2ED00A7D455 /* Frameworks */,
 				02ABD79328C2C2ED00A7D455 /* Resources */,
+				76D0D570A59F93D4A3CE900F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02ABD78528C2C2ED00A7D455 /* LaunchScreen.storyboard in Resources */,
+				02DD1A1E28C2C61500D6630A /* GoogleService-Info.plist in Resources */,
 				02ABD78228C2C2ED00A7D455 /* Assets.xcassets in Resources */,
 				02ABD78028C2C2E800A7D455 /* Main.storyboard in Resources */,
 			);
@@ -252,6 +302,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55025377FEFD5E734ADE3E12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Datability/Pods-Datability-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Datability/Pods-Datability-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Datability/Pods-Datability-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76D0D570A59F93D4A3CE900F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Datability-DatabilityUITests/Pods-Datability-DatabilityUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Datability-DatabilityUITests/Pods-Datability-DatabilityUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Datability-DatabilityUITests/Pods-Datability-DatabilityUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE3F8302D92CB0BE6A46124D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatabilityTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1648DC56D4EE8A49CBD7B85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Datability-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9E81D54E6A36B2CBC07D276 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Datability-DatabilityUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02ABD77128C2C2E800A7D455 /* Sources */ = {
@@ -432,6 +585,7 @@
 		};
 		02ABD7A028C2C2ED00A7D455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21560270074302CB1A9FFBD8 /* Pods-Datability.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +614,7 @@
 		};
 		02ABD7A128C2C2ED00A7D455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3E8939A588DC295E51585FC /* Pods-Datability.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +643,7 @@
 		};
 		02ABD7A328C2C2ED00A7D455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8F22F890DE29D2996A7F859 /* Pods-DatabilityTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +664,7 @@
 		};
 		02ABD7A428C2C2ED00A7D455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25B9D97C35E33989FB519F90 /* Pods-DatabilityTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +685,7 @@
 		};
 		02ABD7A628C2C2ED00A7D455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D14EE42813C206D889758C1E /* Pods-Datability-DatabilityUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +704,7 @@
 		};
 		02ABD7A728C2C2ED00A7D455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62DCD164EBE6E2009F24362B /* Pods-Datability-DatabilityUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

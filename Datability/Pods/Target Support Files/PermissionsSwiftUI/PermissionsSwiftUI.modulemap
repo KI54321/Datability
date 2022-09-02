@@ -1,0 +1,6 @@
+framework module PermissionsSwiftUI {
+  umbrella header "PermissionsSwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
