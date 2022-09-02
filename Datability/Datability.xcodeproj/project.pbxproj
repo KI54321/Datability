@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022BBF2828C2C862009DDA93 /* DatabilityOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022BBF2728C2C862009DDA93 /* DatabilityOnboarding.swift */; };
+		022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */; };
 		02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77828C2C2E800A7D455 /* AppDelegate.swift */; };
 		02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */; };
 		02ABD77D28C2C2E800A7D455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77C28C2C2E800A7D455 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		022BBF2728C2C862009DDA93 /* DatabilityOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityOnboarding.swift; sourceTree = "<group>"; };
+		022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityLogin.swift; sourceTree = "<group>"; };
 		02ABD77528C2C2E800A7D455 /* Datability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Datability.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABD77828C2C2E800A7D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				02ABD77828C2C2E800A7D455 /* AppDelegate.swift */,
 				02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */,
 				02ABD77C28C2C2E800A7D455 /* ViewController.swift */,
+				022BBF2728C2C862009DDA93 /* DatabilityOnboarding.swift */,
+				022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */,
 				02ABD77E28C2C2E800A7D455 /* Main.storyboard */,
 				02ABD78128C2C2ED00A7D455 /* Assets.xcassets */,
 				02ABD78328C2C2ED00A7D455 /* LaunchScreen.storyboard */,
@@ -167,7 +173,6 @@
 				C8F22F890DE29D2996A7F859 /* Pods-DatabilityTests.debug.xcconfig */,
 				25B9D97C35E33989FB519F90 /* Pods-DatabilityTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -413,7 +418,9 @@
 			files = (
 				02ABD77D28C2C2E800A7D455 /* ViewController.swift in Sources */,
 				02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */,
+				022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */,
 				02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */,
+				022BBF2828C2C862009DDA93 /* DatabilityOnboarding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
