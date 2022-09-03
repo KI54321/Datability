@@ -8,6 +8,8 @@
 import SwiftUI
 import SPAlert
 import ActivityIndicatorView
+import FirebaseFirestore
+import FirebaseAuth
 
 struct DatabilityChallengeExplanation: View {
     
@@ -27,12 +29,14 @@ struct DatabilityChallengeExplanation: View {
                 VStack {
                     if !isProcessingResults {
                         VStack {
+                            Text("Brought to you by \(databilityChallenges["host"] as? String ?? "Company")")
+                                .padding(.top, 10)
                     Image(uiImage: challengePhotoImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(20)
                         .frame(width: geoProxy.size.width-40, height: 280, alignment: .center)
-                    
+                        .shadow(radius: 10)
                     
                     Text(databilitySummaryText)
                         .font(.body)
@@ -75,6 +79,12 @@ struct DatabilityChallengeExplanation: View {
                         
                         if plantScannerWorked {
                             PlantScanner.uploadPhoto(image: newValue, lat: oneCoord.coordinate.latitude, long: oneCoord.coordinate.longitude, currentDictChallenge: databilityChallenges)
+                            // Increments total snaps taken local
+                            UserDefaults.standard.set(UserDefaults.standard.integer(forKey:"totalSnapsTakenLocal") + 1, forKey: "totalSnapsTakenLocal")
+                            UserDefaults.standard.set(UserDefaults.standard.integer(forKey:"totalMoneyEarnedLocal") + 1, forKey: "totalMoneyEarnedLocal")
+
+                            Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalSnapsTakenLocal":FieldValue.increment(1.0)])
+                            Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalMoneyEarnedLocal":FieldValue.increment(Double.random(in: 0.1...1.0))])
                             showSPAlert = true
                         }
                         else {

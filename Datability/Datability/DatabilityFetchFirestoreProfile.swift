@@ -43,6 +43,7 @@ struct DatabilityFetchFirestoreProfile {
                     docSnapshotsData.append(oneSnapshot.data())
                 }
                 
+                
                 completion(docSnapshotsData)
             }
             else {

@@ -100,22 +100,40 @@ struct PlantScanner {
                         }
                         
                         if isPlantResultsBool {
-                            if let dataSentenceEmbedding = NLEmbedding.sentenceEmbedding(for: .english) {
-                                let theDistanceBetweenPhrase = 1-(dataSentenceEmbedding.distance(between: expectedPlant, and: plantScannerFirstResultName))
-                                
-                                if theDistanceBetweenPhrase <= 0.2 {
-                                    completion(true)
-                                    return
-                                }
-                                else {
-                                    completion(false)
-                                    return
-                                }
+                            
+                            guard let plantFamilyName = plantScannerFirstResultName.components(separatedBy: " ").first else {
+                                completion(false)
+                                return
+                            }
+                            guard let expectedPlantFamilyName = expectedPlant.components(separatedBy: " ").first else {
+                                completion(false)
+                                return
+                            }
+                            if expectedPlantFamilyName == plantFamilyName {
+                                completion(true)
+                                return
                             }
                             else {
                                 completion(false)
                                 return
                             }
+                            
+//                            if let dataSentenceEmbedding = NLEmbedding.sentenceEmbedding(for: .english) {
+//                                let theDistanceBetweenPhrase = 1-(dataSentenceEmbedding.distance(between: expectedPlant, and: plantScannerFirstResultName))
+//
+//                                if theDistanceBetweenPhrase <= 0.2 {
+//                                    completion(true)
+//                                    return
+//                                }
+//                                else {
+//                                    completion(false)
+//                                    return
+//                                }
+//                            }
+//                            else {
+//                                completion(false)
+//                                return
+//                            }
                             
                         }
                         else {
@@ -150,13 +168,13 @@ struct PlantScanner {
         let currentImageStorage = Storage.storage().reference().child("\(imageUUID).png")
         currentImageStorage.putData(data) { storageMet, storageError in
             if storageError == nil && storageMet != nil {
-                uploadEntries(uuid: currentImageStorage, latitude: "\(lat)", longitude: "\(long)", currentDictChallenge: currentDictChallenge)
+                uploadEntries(uuid: currentImageStorage, latitude: lat, longitude: long, currentDictChallenge: currentDictChallenge)
             }
         }
         
     }
     
-    public static func uploadEntries(uuid: StorageReference, latitude: String, longitude: String, currentDictChallenge: [String:Any]) {
+    public static func uploadEntries(uuid: StorageReference, latitude: Double, longitude: Double, currentDictChallenge: [String:Any]) {
         guard let currentDictID = currentDictChallenge["id"] as? String else { return }
         guard let currentUserID = Auth.auth().currentUser?.uid as? String else { return }
         Firestore.firestore().collection("challenges").document(currentDictID).collection("entries").addDocument(data: ["host": currentUserID, "photo": uuid.fullPath, "lat": latitude, "long": longitude])

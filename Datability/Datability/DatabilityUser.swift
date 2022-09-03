@@ -14,7 +14,7 @@ struct DatabilityUser: Identifiable, Decodable {
     public let emailLocal: String
     public let moneyTilNextPaymentLocal: Double
     public let phoneNumberLocal: String
-    public let totalMoneyEarnedLocal: Double
+    public var totalMoneyEarnedLocal: Double
     public let totalSnapsTakenLocal: Int
 }
 

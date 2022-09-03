@@ -22,27 +22,21 @@ struct DatabilityMaps: View {
     var dataVC: ViewController
     
     @State var databilityChallenges: [[String:Any]] = []
-    @State var coordinatesShow: [DataMapCoordinates] = []
-    @State var refreshID: String = UUID().uuidString
-    @State var mapRect: MKCoordinateRegion = MKCoordinateRegion()
+    @State var mapRegion: MKCoordinateRegion
     
+    init(dataVC: ViewController) {
+        self.dataVC = dataVC
+        mapRegion = MKCoordinateRegion(center: DatabilityUserLoginFirebase.allMapCoordinates.first?.dataCoordinates ??  CLLocationCoordinate2D(latitude: 0, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+    }
     var body: some View {
         NavigationView {
             VStack {
-                Map(coordinateRegion: $mapRect, annotationItems: coordinatesShow) { oneCoordinate in
+                Map(coordinateRegion: $mapRegion, annotationItems: DatabilityUserLoginFirebase.allMapCoordinates) { oneCoordinate in
                     MapMarker(coordinate: oneCoordinate.dataCoordinates)
                 }
+                .ignoresSafeArea()
             }
-            .id(refreshID)
-            .onAppear {
-                DatabilityUserLoginFirebase.getMapCoordinates { allCLLLandmarkLocations in
-                    coordinatesShow = allCLLLandmarkLocations.map({ oneCLLLocation in
-                        return DataMapCoordinates(dataCoordinates: oneCLLLocation.coordinate)
-                    })
-                    refreshID = UUID().uuidString
-                    
-                }
-            }
+        
         }
     }
 }

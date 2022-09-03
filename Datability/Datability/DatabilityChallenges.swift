@@ -8,6 +8,8 @@
 import SwiftUI
 import FirebaseAuth
 import Photos
+import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 struct DatabilityChallenges: View {
     var dataVC: ViewController
@@ -69,9 +71,19 @@ struct DatabilityChallenges: View {
                     .padding(.top, 10)
                     .padding(.bottom, 10)
                         VStack {
-                            Text("8 Pics")
-                                .font(.headline)
-                       
+                            
+                            
+//                            returnViewCountRecords(oneDatabilityChallenge: oneDatabilityChallenge) { oneDataText in
+//
+//                            }
+//                            if oneDatabilityChallenge["entries"] == nil {
+                                Text("Open")
+                                    .font(.headline)
+//                            }
+//                            else {
+//                                Text("\((oneDatabilityChallenge["entries"] as? [[String:Any]])?.count ?? 0) Pics")
+//                                .font(.headline)
+//                            }
 //                        } label: {
 //
 //                            Image(systemName: "chevron.right.circle.fill")
@@ -104,6 +116,8 @@ struct DatabilityChallenges: View {
                         refreshID = UUID().uuidString
                     }
                 })
+                DatabilityUserLoginFirebase.getMapCoordinates()
+
             }
             
             
@@ -112,6 +126,32 @@ struct DatabilityChallenges: View {
         }
         
     }
+    
+    
+//    func returnViewCountRecords(oneDatabilityChallenge: [String:Any], completion: @escaping (Text) -> ()) -> AnyView {
+//
+//        let viewCountRecordsDispatchGroup = DispatchGroup()
+//        viewCountRecordsDispatchGroup.enter()
+//
+//        var numberOfCounts = 0
+//        Firestore.firestore().collection("challenges").document(oneDatabilityChallenge["id"] as? String ?? "ERROR").collection("entries").getDocuments { oneDocSnap, oneDocError in
+//            if oneDocError == nil && oneDocSnap != nil {
+//
+//                numberOfCounts = oneDocSnap?.documents.count ?? 0
+//            }
+//            viewCountRecordsDispatchGroup.leave()
+//
+//
+//        }
+//
+//        viewCountRecordsDispatchGroup.notify(queue: DispatchQueue(label: "ViewNumberOfSnaps")) {
+//            completion(Text("\(numberOfCounts) Pics")
+//                .font(.headline))
+//            return
+//        }
+//        return Text("")
+//            .hidden()
+//    }
 }
 
 
