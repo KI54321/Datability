@@ -20,6 +20,8 @@
 		02ABD79028C2C2ED00A7D455 /* DatabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD78F28C2C2ED00A7D455 /* DatabilityTests.swift */; };
 		02ABD79A28C2C2ED00A7D455 /* DatabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */; };
 		02ABD79C28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */; };
+		02C8E50328C3007600A41A99 /* DatabilityUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50228C3007600A41A99 /* DatabilityUser.swift */; };
+		02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */; };
 		2C06D0E7D9F461DECF2439AF /* Pods_DatabilityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF325D2831AAE66878F99856 /* Pods_DatabilityTests.framework */; };
 		702603B34BC11E33DE79B29E /* Pods_Datability_DatabilityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */; };
 		D0D283459E7ABE8ED992D5FA /* Pods_Datability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F79FDE3784759D96BFC034 /* Pods_Datability.framework */; };
@@ -61,6 +63,8 @@
 		02ABD79528C2C2ED00A7D455 /* DatabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITests.swift; sourceTree = "<group>"; };
 		02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02C8E50228C3007600A41A99 /* DatabilityUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityUser.swift; sourceTree = "<group>"; };
+		02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityProfile.swift; sourceTree = "<group>"; };
 		21560270074302CB1A9FFBD8 /* Pods-Datability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datability.debug.xcconfig"; path = "Target Support Files/Pods-Datability/Pods-Datability.debug.xcconfig"; sourceTree = "<group>"; };
 		25B9D97C35E33989FB519F90 /* Pods-DatabilityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatabilityTests.release.xcconfig"; path = "Target Support Files/Pods-DatabilityTests/Pods-DatabilityTests.release.xcconfig"; sourceTree = "<group>"; };
 		305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datability_DatabilityUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,8 @@
 				0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */,
 				022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */,
 				022BBF2B28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift */,
+				02C8E50228C3007600A41A99 /* DatabilityUser.swift */,
+				02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */,
 				02ABD77E28C2C2E800A7D455 /* Main.storyboard */,
 				02ABD78128C2C2ED00A7D455 /* Assets.xcassets */,
 				02ABD78328C2C2ED00A7D455 /* LaunchScreen.storyboard */,
@@ -423,8 +429,10 @@
 			files = (
 				02ABD77D28C2C2E800A7D455 /* ViewController.swift in Sources */,
 				02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */,
+				02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */,
 				022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */,
 				02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */,
+				02C8E50328C3007600A41A99 /* DatabilityUser.swift in Sources */,
 				022BBF2C28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift in Sources */,
 				0201FD7528C2F35900023BEA /* DatabilityPersonalInfo.swift in Sources */,
 			);
