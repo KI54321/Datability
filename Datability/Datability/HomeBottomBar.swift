@@ -28,7 +28,7 @@ struct HomeBottomBar: View {
             
             currentViewShown
             BottomBar(selectedIndex: $currentTab, items: currentTabs)
-                .frame(width: geoProxy.size.width/1.5, height: 50, alignment: .center)
+                .frame(width: geoProxy.size.width/1.2, height: 50, alignment: .center)
                 
         }
         .onChange(of: currentTab) { newValue in

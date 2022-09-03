@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import CoreLocation
 
 struct DatabilityUserLoginFirebase {
     public static func uploadUser(dataTextName: String, dataTextEmail: String, dataTextPhoneNumber: String, password: String) {
@@ -43,6 +44,30 @@ struct DatabilityUserLoginFirebase {
         }
     }
     
-    public static func getMapCoordinates() {
+    public static func getMapCoordinates(completion: @escaping ([CLLocation]) -> ()) {
+        
+        var allMapCoordinates = [CLLocation]()
+        Firestore.firestore().collection("challenges").getDocuments { allDocSnapshot, allDocError in
+            if allDocError == nil && allDocSnapshot != nil {
+                for eachDoc in (allDocSnapshot?.documents ?? []) {
+                    eachDoc.reference.collection("entries").getDocuments { allDocEntrieSnapshot, allDocEntrieError in
+                        if allDocEntrieError == nil && allDocEntrieSnapshot != nil {
+                            for oneEntrieDocSnap in (allDocEntrieSnapshot?.documents ?? []) {
+                                if (oneEntrieDocSnap.get("host") as? String ?? "ERROR") == (Auth.auth().currentUser?.uid ?? "User_Error") {
+                                    allMapCoordinates.append(CLLocation(latitude: (oneEntrieDocSnap.get("lat") as? Double ?? 0.0), longitude: (oneEntrieDocSnap.get("long") as? Double ?? 0.0)))
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                completion(allMapCoordinates)
+                return
+            }
+            else {
+                completion([])
+                return
+            }
+        }
     }
 }
