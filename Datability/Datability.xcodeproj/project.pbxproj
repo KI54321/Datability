@@ -10,6 +10,7 @@
 		0201FD7528C2F35900023BEA /* DatabilityPersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */; };
 		022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */; };
 		022BBF2F28C2D0DA009DDA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022BBF2E28C2D0DA009DDA93 /* GoogleService-Info.plist */; };
+		024B769728C3D348005C77A9 /* DatabilityMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B769628C3D348005C77A9 /* DatabilityMaps.swift */; };
 		02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77828C2C2E800A7D455 /* AppDelegate.swift */; };
 		02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */; };
 		02ABD77D28C2C2E800A7D455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77C28C2C2E800A7D455 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityLogin.swift; sourceTree = "<group>"; };
 		022BBF2D28C2D060009DDA93 /* Datability.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Datability.entitlements; sourceTree = "<group>"; };
 		022BBF2E28C2D0DA009DDA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		024B769628C3D348005C77A9 /* DatabilityMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityMaps.swift; sourceTree = "<group>"; };
 		02ABD77528C2C2E800A7D455 /* Datability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Datability.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABD77828C2C2E800A7D455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				02ABD77C28C2C2E800A7D455 /* ViewController.swift */,
 				0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */,
 				02B8744928C30FE700A0EA2D /* DatabilityChallenges.swift */,
+				024B769628C3D348005C77A9 /* DatabilityMaps.swift */,
 				02B8744D28C357B000A0EA2D /* DatabilityChallengeExplanation.swift */,
 				02B8744B28C33BBE00A0EA2D /* HomeBottomBar.swift */,
 				022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */,
@@ -457,6 +460,7 @@
 				02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */,
 				02B8744E28C357B000A0EA2D /* DatabilityChallengeExplanation.swift in Sources */,
 				02B8744A28C30FE700A0EA2D /* DatabilityChallenges.swift in Sources */,
+				024B769728C3D348005C77A9 /* DatabilityMaps.swift in Sources */,
 				02C8E50728C3027000A41A99 /* DatabilityUserLoginFirebase.swift in Sources */,
 				022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */,
 				02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */,

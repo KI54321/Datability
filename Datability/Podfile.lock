@@ -596,6 +596,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - ActivityIndicatorView (1.1.0)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
@@ -751,8 +752,10 @@ PODS:
   - PermissionsSwiftUI (1.4.3):
     - Introspect
   - PromisesObjC (2.1.1)
+  - SPAlert (4.2.0)
 
 DEPENDENCIES:
+  - ActivityIndicatorView
   - ConcentricOnboarding
   - FirebaseAuth
   - FirebaseFirestore
@@ -760,10 +763,12 @@ DEPENDENCIES:
   - FirebaseMessaging
   - FirebaseStorage
   - PermissionsSwiftUI
+  - SPAlert
 
 SPEC REPOS:
   trunk:
     - abseil
+    - ActivityIndicatorView
     - BoringSSL-GRPC
     - ConcentricOnboarding
     - FirebaseAppCheckInterop
@@ -790,9 +795,11 @@ SPEC REPOS:
     - nanopb
     - PermissionsSwiftUI
     - PromisesObjC
+    - SPAlert
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
+  ActivityIndicatorView: 2a73f96feeb64c8583a0a9dfeeee27ddb8f71b4d
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   ConcentricOnboarding: 423a2420f67b987d6f59388236ba007d327bf120
   FirebaseAppCheckInterop: 8e95b4329809e3c06fb425acb3839dcadfe23673
@@ -819,7 +826,8 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PermissionsSwiftUI: 4a6a2ac4b362da7da602cf0cf3978cf9307f049d
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  SPAlert: 735da1f16a887e294719217572ce1f936d8c8782
 
-PODFILE CHECKSUM: d362f7ddf42fa7497663fa0349b67600e6829cd5
+PODFILE CHECKSUM: 8e2851d28b0d5d57361add759bff59dadf2ed7bb
 
 COCOAPODS: 1.11.3

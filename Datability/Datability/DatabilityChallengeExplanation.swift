@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SPAlert
+import ActivityIndicatorView
 
 struct DatabilityChallengeExplanation: View {
     
@@ -13,58 +15,92 @@ struct DatabilityChallengeExplanation: View {
     @State var dataTakePhotVC: Bool = false
     @State var databilityChallenges: [String:Any]
     @State var databilitySummaryText = ""
-
-       
+    @State var showSPAlert = false
+    @State var showSPAlertBad = false
+@State var isProcessingResults = false
+    @State var challengePhotoImage: UIImage = UIImage()
+    
     var body: some View {
         GeometryReader { geoProxy in
             
-        
-        VStack {
-            Text(databilitySummaryText)
-                .font(.body)
-                .fontWeight(.medium)
-                .padding()
-            Button {
-                dataTakePhotVC = true
-            } label: {
-                Text("Capture the Photo")
-                    .padding()
-                    .foregroundColor(Color.white)
-            }
-            .frame(width: geoProxy.size.width-60)
-            .background(Color.blue)
-            .cornerRadius(20)
-            
-            Spacer()
-
-
-        }
-        .navigationTitle("\(databilityChallenges["type"] as? String ?? "Type")")
-        
-        .fullScreenCover(isPresented: $dataTakePhotVC) {
-            ImagePickerDataViewControllerRepresentable(dataSelectedImage: $dataSelectedImage)
-                .edgesIgnoringSafeArea(.vertical)
-        }
-        .onChange(of: dataSelectedImage) { newValue in
-            guard let oneCoord = PlantScanner.dataLocationManager.location else { return }
-
-            PlantScanner.plantScanner(image: newValue, expectedPlant: (databilityChallenges["type"] as? String ?? "Type")) { plantScannerWorked in
-                if plantScannerWorked {
-                PlantScanner.uploadPhoto(image: newValue, lat: oneCoord.coordinate.latitude, long: oneCoord.coordinate.longitude, currentDictChallenge: databilityChallenges)
+            ScrollView {
+                VStack {
+                    if !isProcessingResults {
+                        VStack {
+                    Image(uiImage: challengePhotoImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(20)
+                        .frame(width: geoProxy.size.width-40, height: 280, alignment: .center)
+                    
+                    
+                    Text(databilitySummaryText)
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .padding()
+                    Button {
+                        dataTakePhotVC = true
+                    } label: {
+                        Text("Capture the Photo")
+                            .padding()
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(width: geoProxy.size.width-60)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                        Spacer()
+                        }
+                    }
+                    else {
+                        
+                        ActivityIndicatorView(isVisible: $isProcessingResults, type: .rotatingDots(count: 3))
+                            .padding(.bottom, 50)
+                    }
+                    
+                    
+                }
+                .navigationTitle("\(databilityChallenges["type"] as? String ?? "Type")")
+                
+                .fullScreenCover(isPresented: $dataTakePhotVC) {
+                    ImagePickerDataViewControllerRepresentable(dataSelectedImage: $dataSelectedImage)
+                        .edgesIgnoringSafeArea(.vertical)
+                }
+                .onChange(of: dataSelectedImage) { newValue in
+                    self.isProcessingResults = true
+                    guard let oneCoord = PlantScanner.dataLocationManager.location else { return }
+                    
+                    PlantScanner.plantScanner(image: newValue, expectedPlant: (databilityChallenges["type"] as? String ?? "Type")) { plantScannerWorked in
+                        
+                        self.isProcessingResults = false
+                        
+                        if plantScannerWorked {
+                            PlantScanner.uploadPhoto(image: newValue, lat: oneCoord.coordinate.latitude, long: oneCoord.coordinate.longitude, currentDictChallenge: databilityChallenges)
+                            showSPAlert = true
+                        }
+                        else {
+                            showSPAlertBad = true
+                            
+                        }
+                        
+                    }
+                }
+                .SPAlert(isPresent: $showSPAlert, message: "Congrats! This entry works.", preset: .done)
+                .SPAlert(isPresent: $showSPAlertBad, message: "Wrong One! Try a different plant.", preset: .error)
+                .onAppear {
+                    PlantScanner.dataLocationManager.startUpdatingLocation()
+                    
+                    PlantScanner.createNLPSummaries(plant: databilityChallenges["type"] as? String ?? "Type") { newSummaryText in
+                        databilitySummaryText = newSummaryText
+                    }
+                    PlantScanner.getPhotoChallengesURL(currentDictChallenge: databilityChallenges) { oneDataImageChallenge in
+                        challengePhotoImage = oneDataImageChallenge
+                    }
+                }
+                .onDisappear {
+                    PlantScanner.dataLocationManager.stopUpdatingLocation()
+                    
                 }
             }
-        }
-        .onAppear {
-            PlantScanner.dataLocationManager.startUpdatingLocation()
-            
-            PlantScanner.createNLPSummaries(plant: databilityChallenges["type"] as? String ?? "Type") { newSummaryText in
-                databilitySummaryText = newSummaryText
-            }
-        }
-        .onDisappear {
-            PlantScanner.dataLocationManager.stopUpdatingLocation()
-            
-        }
         }
     }
 }
@@ -93,8 +129,8 @@ struct ImagePickerDataViewControllerRepresentable: UIViewControllerRepresentable
 class PhotoDataCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var imagePickerDataVC: ImagePickerDataViewControllerRepresentable
     
-     init(imagePickerDataVC: ImagePickerDataViewControllerRepresentable) {
-         self.imagePickerDataVC = imagePickerDataVC
+    init(imagePickerDataVC: ImagePickerDataViewControllerRepresentable) {
+        self.imagePickerDataVC = imagePickerDataVC
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.imagePickerDataVC.dataPresentationMode.wrappedValue.dismiss()
@@ -108,6 +144,6 @@ class PhotoDataCoordinator: NSObject, UINavigationControllerDelegate, UIImagePic
 struct DatabilityChallengeExplanation_Previews: PreviewProvider {
     static var previews: some View {
         Text("Datability")
-//        DatabilityChallengeExplanation(databilityChallenges: [:])
+        //        DatabilityChallengeExplanation(databilityChallenges: [:])
     }
 }

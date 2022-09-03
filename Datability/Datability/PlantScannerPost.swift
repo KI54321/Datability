@@ -101,9 +101,9 @@ struct PlantScanner {
                         
                         if isPlantResultsBool {
                             if let dataSentenceEmbedding = NLEmbedding.sentenceEmbedding(for: .english) {
-                                let theDistanceBetweenPhrase = dataSentenceEmbedding.distance(between: expectedPlant, and: plantScannerFirstResultName)
+                                let theDistanceBetweenPhrase = 1-(dataSentenceEmbedding.distance(between: expectedPlant, and: plantScannerFirstResultName))
                                 
-                                if theDistanceBetweenPhrase >= 0.5 {
+                                if theDistanceBetweenPhrase <= 0.2 {
                                     completion(true)
                                     return
                                 }
@@ -160,6 +160,34 @@ struct PlantScanner {
         guard let currentDictID = currentDictChallenge["id"] as? String else { return }
         guard let currentUserID = Auth.auth().currentUser?.uid as? String else { return }
         Firestore.firestore().collection("challenges").document(currentDictID).collection("entries").addDocument(data: ["host": currentUserID, "photo": uuid.fullPath, "lat": latitude, "long": longitude])
+    }
+    public static func getPhotoChallengesURL(currentDictChallenge: [String:Any], completion: @escaping (UIImage) -> ()) {
+        guard let photosURLString = currentDictChallenge["photoURL"] as? String else {
+            completion(UIImage())
+
+            return
+            
+        }
+        guard let photosURL = URL(string: photosURLString) else {
+            completion(UIImage())
+
+            return
+            
+        }
+        URLSession.shared.dataTask(with: photosURL) { photosData, photosResponse, photosError in
+            if photosError == nil && photosResponse != nil && photosData != nil {
+                guard let photosData = photosData else {
+                    completion(UIImage())
+                    return
+                }
+                completion(UIImage(data: photosData) ?? UIImage())
+                
+            }
+            else {
+                completion(UIImage())
+                return
+            }
+        }.resume()
     }
     
     public static func createNLPSummaries(plant: String, completion: @escaping (String) -> ()) {

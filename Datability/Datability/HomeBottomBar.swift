@@ -10,7 +10,7 @@ import BottomBar_SwiftUI
 
 struct HomeBottomBar: View {
     
-    @State var currentTabs = [BottomBarItem(icon: Image(systemName: "house.fill"), title: "Home", color: .purple), BottomBarItem(icon: Image(systemName: "person.fill"), title: "Profile", color: .blue)]
+    @State var currentTabs = [BottomBarItem(icon: Image(systemName: "house.fill"), title: "Home", color: .purple), BottomBarItem(icon: Image(systemName: "location.fill"), title: "Maps", color: .orange), BottomBarItem(icon: Image(systemName: "person.fill"), title: "Profile", color: .blue)]
     @State var currentTab: Int = 0
     var dataVC: ViewController
     @State var currentViewShown: AnyView
@@ -36,7 +36,10 @@ struct HomeBottomBar: View {
                     currentViewShown = AnyView(DatabilityChallenges(dataVC: dataVC))
 
                 }
-                else {
+                else if newValue == 1 {
+                    currentViewShown = AnyView(DatabilityMaps(dataVC: dataVC))
+
+                } else {
                     currentViewShown = AnyView(DatabilityProfile(dataVC: dataVC))
 
                 }

@@ -13,6 +13,8 @@ target 'Datability' do
   pod 'FirebaseMessaging'
   pod 'ConcentricOnboarding'
   pod 'PermissionsSwiftUI'
+  pod 'SPAlert'
+  pod 'ActivityIndicatorView'
 
 
   target 'DatabilityTests' do
