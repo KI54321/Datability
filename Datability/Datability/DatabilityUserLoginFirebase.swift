@@ -42,4 +42,7 @@ struct DatabilityUserLoginFirebase {
             }
         }
     }
+    
+    public static func getMapCoordinates() {
+    }
 }

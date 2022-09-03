@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 import Photos
+import MapKit
 
 struct DatabilityMaps: View {
     
@@ -18,7 +19,11 @@ struct DatabilityMaps: View {
     @State var refreshID: String = UUID().uuidString
     
     var body: some View {
-        Text("Datability Maps")
+        NavigationView {
+            VStack {
+                Map(coordinateRegion: \, annotationItems: <#T##RandomAccessCollection#>, annotationContent: <#T##(Identifiable) -> MapAnnotationProtocol#>)
+            }
+        }
     }
 }
 
