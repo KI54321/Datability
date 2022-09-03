@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import FirebaseAuth
+import NaturalLanguage
 
 class ViewController: UIViewController {
 
@@ -32,6 +33,8 @@ class ViewController: UIViewController {
             
             loadDataChallengesHostingView()
         }
+        
+        
     }
     
     func removeDataHostingView() {

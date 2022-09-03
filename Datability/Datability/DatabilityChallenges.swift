@@ -23,8 +23,12 @@ struct DatabilityChallenges: View {
             
             List(0..<databilityChallenges.count, id: \.self) { oneDataSelected in
                 let oneDatabilityChallenge = databilityChallenges[oneDataSelected]
-
+                
                 Section {
+                    NavigationLink {
+                        DatabilityChallengeExplanation(databilityChallenges: oneDatabilityChallenge)
+                        
+                    } label: {
                     HStack {
                     VStack {
                         HStack {
@@ -37,6 +41,7 @@ struct DatabilityChallenges: View {
                             Spacer()
                    
                         }
+                        
                         
                         Spacer()
                         HStack {
@@ -61,29 +66,31 @@ struct DatabilityChallenges: View {
                             Spacer()
                         }
                     }
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
                         VStack {
                             Text("8 Pics")
                                 .font(.headline)
-                        NavigationLink {
-                            DatabilityChallengeExplanation(databilityChallenges: oneDatabilityChallenge)
-                        } label: {
-                            
-                            Image(systemName: "chevron.right.circle.fill")
-                                .padding(.all, 10)
-                                .foregroundColor(.white)
-                            
-                                
-                        }
-                        .background(Color.black)
-                        .cornerRadius(20)
-                        .frame(width: 25, height: 25, alignment: .center)
-                            
+                       
+//                        } label: {
+//
+//                            Image(systemName: "chevron.right.circle.fill")
+//                                .padding(.all, 10)
+//                                .foregroundColor(.white)
+//
+//
+//                        }
+//                        .background(Color.black)
+//                        .cornerRadius(20)
+//                        .frame(width: 25, height: 25, alignment: .center)
+//
                         }
                         
                     }
                 }
+             
+                }
                 .frame(height: 100)
-                    
                 
             }
             
