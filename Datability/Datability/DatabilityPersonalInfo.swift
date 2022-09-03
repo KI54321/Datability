@@ -69,13 +69,25 @@ struct DatabilityPersonalInfo: View {
                 
                 
                 .navigationTitle("Personal Info")
-                .JMModal(showModal: $continueOnboarding, for: [.location, .camera], autoCheckAuthorization: false, restrictDismissal: true)
-                .onChange(of: continueOnboarding, perform: { newValue in
-                    if !newValue {
-                        shouldPresentPersonalInfo = false
-                        dataVC.removeDataHostingView()
-                    }
+                .JMModal(showModal: $continueOnboarding, for: [.location, .camera], autoCheckAuthorization: false, restrictDismissal: true, onAppear: {
+                    
+                }, onDisappear: {
+                    
+                    // Done onboarding
+                    UserDefaults.standard.set(dataTextName, forKey: "fullNameLocal")
+                    UserDefaults.standard.set(dataTextEmail, forKey: "emailLocal")
+                    UserDefaults.standard.set(0.0, forKey: "challengesCompletedLocal")
+                    UserDefaults.standard.set(0.0, forKey: "moneyTilNextPaymentLocal")
+                    UserDefaults.standard.set(dataTextPhoneNumber, forKey: "phoneNumberLocal")
+                    UserDefaults.standard.set(0.0, forKey: "totalMoneyEarnedLocal")
+                    UserDefaults.standard.set(0.0, forKey: "totalSnapsTakenLocal")
+                    
+                    DatabilityUserLoginFirebase.uploadUser(dataTextName: dataTextName, dataTextEmail: dataTextEmail, dataTextPhoneNumber: dataTextPhoneNumber)
+                    
+                    shouldPresentPersonalInfo = false
+                    dataVC.removeDataHostingView()
                 })
+                
                 .onTapGesture {
                     UIApplication.shared.resignFirstResponder()
                 }

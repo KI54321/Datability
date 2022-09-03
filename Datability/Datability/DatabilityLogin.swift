@@ -13,7 +13,7 @@ struct DatabilityLogin: View {
     @State var dataTextPassword: String = ""
 
     var dataVC: ViewController
-
+    @State var showPermissions: Bool = false
     @State var continueOnboarding: Bool = false
     
     var body: some View {
@@ -42,7 +42,10 @@ struct DatabilityLogin: View {
                     Button {
                         Auth.auth().signIn(withEmail: dataTextEmail, password: dataTextPassword) { didSignInResult, signInResultError in
                             if signInResultError == nil && didSignInResult != nil {
-                                continueOnboarding = true
+                                guard let currentUID = didSignInResult?.user.uid else { return }
+                                DatabilityUserLoginFirebase.getUser(currentUserID: currentUID)
+                                showPermissions = true
+                                
                             }
                             else {
                                 Auth.auth().createUser(withEmail: dataTextEmail, password: dataTextPassword) { didSignInResult, signInResultError in
@@ -75,7 +78,12 @@ struct DatabilityLogin: View {
                     .frame(width: dataProxy.size.width, height: dataProxy.size.height, alignment: .center)
                     .aspectRatio(contentMode: .fit))
                 
-                
+                .JMModal(showModal: $showPermissions, for: [.location, .camera], autoCheckAuthorization: false, restrictDismissal: true, onAppear: {
+                    
+                }, onDisappear: {
+
+                    dataVC.removeDataHostingView()
+                })
                 .navigationTitle("Datability")
                 .fullScreenCover(isPresented: $continueOnboarding, content: {
                     DatabilityPersonalInfo(dataTextEmail: $dataTextEmail, dataVC: dataVC, shouldPresentPersonalInfo: $continueOnboarding)
@@ -83,6 +91,7 @@ struct DatabilityLogin: View {
                 .onTapGesture {
                     UIApplication.shared.resignFirstResponder()
                 }
+                
             }
         }
     }

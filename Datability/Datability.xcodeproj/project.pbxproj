@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0201FD7528C2F35900023BEA /* DatabilityPersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */; };
 		022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */; };
-		022BBF2C28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022BBF2B28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift */; };
 		022BBF2F28C2D0DA009DDA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022BBF2E28C2D0DA009DDA93 /* GoogleService-Info.plist */; };
 		02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77828C2C2E800A7D455 /* AppDelegate.swift */; };
 		02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */; };
@@ -20,8 +19,11 @@
 		02ABD79028C2C2ED00A7D455 /* DatabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD78F28C2C2ED00A7D455 /* DatabilityTests.swift */; };
 		02ABD79A28C2C2ED00A7D455 /* DatabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */; };
 		02ABD79C28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */; };
+		02B8744828C30E2200A0EA2D /* BottomBar-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02B8744728C30E2200A0EA2D /* BottomBar-SwiftUI */; };
 		02C8E50328C3007600A41A99 /* DatabilityUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50228C3007600A41A99 /* DatabilityUser.swift */; };
 		02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */; };
+		02C8E50728C3027000A41A99 /* DatabilityUserLoginFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50628C3027000A41A99 /* DatabilityUserLoginFirebase.swift */; };
+		02C8E50928C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50828C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift */; };
 		2C06D0E7D9F461DECF2439AF /* Pods_DatabilityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF325D2831AAE66878F99856 /* Pods_DatabilityTests.framework */; };
 		702603B34BC11E33DE79B29E /* Pods_Datability_DatabilityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */; };
 		D0D283459E7ABE8ED992D5FA /* Pods_Datability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F79FDE3784759D96BFC034 /* Pods_Datability.framework */; };
@@ -47,7 +49,6 @@
 /* Begin PBXFileReference section */
 		0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityPersonalInfo.swift; sourceTree = "<group>"; };
 		022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityLogin.swift; sourceTree = "<group>"; };
-		022BBF2B28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityFirebaseLogin.swift; sourceTree = "<group>"; };
 		022BBF2D28C2D060009DDA93 /* Datability.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Datability.entitlements; sourceTree = "<group>"; };
 		022BBF2E28C2D0DA009DDA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02ABD77528C2C2E800A7D455 /* Datability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Datability.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +66,8 @@
 		02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		02C8E50228C3007600A41A99 /* DatabilityUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityUser.swift; sourceTree = "<group>"; };
 		02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityProfile.swift; sourceTree = "<group>"; };
+		02C8E50628C3027000A41A99 /* DatabilityUserLoginFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUserLoginFirebase.swift; sourceTree = "<group>"; };
+		02C8E50828C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityFetchFirestoreProfile.swift; sourceTree = "<group>"; };
 		21560270074302CB1A9FFBD8 /* Pods-Datability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Datability.debug.xcconfig"; path = "Target Support Files/Pods-Datability/Pods-Datability.debug.xcconfig"; sourceTree = "<group>"; };
 		25B9D97C35E33989FB519F90 /* Pods-DatabilityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatabilityTests.release.xcconfig"; path = "Target Support Files/Pods-DatabilityTests/Pods-DatabilityTests.release.xcconfig"; sourceTree = "<group>"; };
 		305743824C3483FD81EB7944 /* Pods_Datability_DatabilityUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Datability_DatabilityUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D283459E7ABE8ED992D5FA /* Pods_Datability.framework in Frameworks */,
+				02B8744828C30E2200A0EA2D /* BottomBar-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,9 +139,10 @@
 				02ABD77C28C2C2E800A7D455 /* ViewController.swift */,
 				0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */,
 				022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */,
-				022BBF2B28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift */,
 				02C8E50228C3007600A41A99 /* DatabilityUser.swift */,
+				02C8E50628C3027000A41A99 /* DatabilityUserLoginFirebase.swift */,
 				02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */,
+				02C8E50828C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift */,
 				02ABD77E28C2C2E800A7D455 /* Main.storyboard */,
 				02ABD78128C2C2ED00A7D455 /* Assets.xcassets */,
 				02ABD78328C2C2ED00A7D455 /* LaunchScreen.storyboard */,
@@ -205,6 +210,9 @@
 			dependencies = (
 			);
 			name = Datability;
+			packageProductDependencies = (
+				02B8744728C30E2200A0EA2D /* BottomBar-SwiftUI */,
+			);
 			productName = Datability;
 			productReference = 02ABD77528C2C2E800A7D455 /* Datability.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +288,9 @@
 				Base,
 			);
 			mainGroup = 02ABD76C28C2C2E800A7D455;
+			packageReferences = (
+				02B8744628C30E2200A0EA2D /* XCRemoteSwiftPackageReference "bottombar-swiftui" */,
+			);
 			productRefGroup = 02ABD77628C2C2E800A7D455 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -427,13 +438,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02C8E50928C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift in Sources */,
 				02ABD77D28C2C2E800A7D455 /* ViewController.swift in Sources */,
 				02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */,
 				02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */,
+				02C8E50728C3027000A41A99 /* DatabilityUserLoginFirebase.swift in Sources */,
 				022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */,
 				02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */,
 				02C8E50328C3007600A41A99 /* DatabilityUser.swift in Sources */,
-				022BBF2C28C2CA9E009DDA93 /* DatabilityFirebaseLogin.swift in Sources */,
 				0201FD7528C2F35900023BEA /* DatabilityPersonalInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +804,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		02B8744628C30E2200A0EA2D /* XCRemoteSwiftPackageReference "bottombar-swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smartvipere75/bottombar-swiftui";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		02B8744728C30E2200A0EA2D /* BottomBar-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02B8744628C30E2200A0EA2D /* XCRemoteSwiftPackageReference "bottombar-swiftui" */;
+			productName = "BottomBar-SwiftUI";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 02ABD76D28C2C2E800A7D455 /* Project object */;
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         dataLoginHostingController = UIHostingController(rootView: DatabilityLogin(dataVC: self))
 
-        loadDataHostingView()
+        if Auth.auth().currentUser == nil {
+            loadDataHostingView()
+        }
+        else {
+            guard let currentUserID = Auth.auth().currentUser?.uid else { return }
+            DatabilityUserLoginFirebase.getUser(currentUserID: currentUserID)
+        }
     }
     
     func removeDataHostingView() {
