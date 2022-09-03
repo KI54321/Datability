@@ -28,6 +28,7 @@ struct DatabilityLogin: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 300, height: 300, alignment: .center)
                         .padding(.bottom, 30).padding(.top, 30)
+                    
                     TextField("Email", text: $dataTextEmail)
                         .padding(.all, 10)
                         .background(RoundedRectangle(cornerRadius: 20).stroke(Color(red: 0.51, green: 0.7, blue: 0.64), lineWidth: 2))
@@ -35,12 +36,14 @@ struct DatabilityLogin: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                     
-                    TextField("Password", text: $dataTextPassword)
+                    SecureField("Password", text: $dataTextPassword)
                         .padding(.all, 10)
                         .background(RoundedRectangle(cornerRadius: 20).stroke(Color(red: 0.51, green: 0.7, blue: 0.64), lineWidth: 2))
                         .textFieldStyle(.plain)
                         .frame(maxWidth: .infinity)
                         .padding()
+                        
+                    
                     
                     Button {
                         Auth.auth().signIn(withEmail: dataTextEmail, password: dataTextPassword) { didSignInResult, signInResultError in

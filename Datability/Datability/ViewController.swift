@@ -28,9 +28,9 @@ class ViewController: UIViewController {
             loadDataHostingView()
         }
         else {
-            guard let currentUserID = Auth.auth().currentUser?.uid else { return }
-            DatabilityUserLoginFirebase.getUser(currentUserID: currentUserID)
-            
+//            guard let currentUserID = Auth.auth().currentUser?.uid else { return }
+//            DatabilityUserLoginFirebase.getUser(currentUserID: currentUserID)
+//            
             loadDataChallengesHostingView()
         }
         

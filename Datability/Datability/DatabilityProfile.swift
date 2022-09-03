@@ -46,7 +46,7 @@ struct DatabilityProfile: View {
                                 Text("Snaps Taken\n")
                             } .offset(y: -8)
                             VStack {
-                                Text("\(databaseProfile?.totalSnapsTakenLocal ?? 0)")
+                                Text("\((databaseProfile?.totalSnapsTakenLocal ?? 0)*100)")
                                     .font(.system(size:80))
                                     .foregroundStyle(.conicGradient(colors: [Color(red: 0.8, green: 0.267, blue: 0.294), Color(red: 0.875, green: 0.451, blue: 0.451), .white], center: .trailing, angle: .degrees(0)))
                                 Text("Total Points Earned")

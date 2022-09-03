@@ -57,7 +57,7 @@ struct DatabilityChallengeExplanation: View {
                     }
                     else {
                         
-                        ActivityIndicatorView(isVisible: $isProcessingResults, type: .rotatingDots(count: 3))
+                        ActivityIndicatorView(isVisible: $isProcessingResults, type: .equalizer(count: 15))
                             .padding(.bottom, 50)
                     }
                     
@@ -80,11 +80,12 @@ struct DatabilityChallengeExplanation: View {
                         if plantScannerWorked {
                             PlantScanner.uploadPhoto(image: newValue, lat: oneCoord.coordinate.latitude, long: oneCoord.coordinate.longitude, currentDictChallenge: databilityChallenges)
                             // Increments total snaps taken local
+                            let moneyIncrementedRandom = Double.random(in: 0.1...1.0)
                             UserDefaults.standard.set(UserDefaults.standard.integer(forKey:"totalSnapsTakenLocal") + 1, forKey: "totalSnapsTakenLocal")
-                            UserDefaults.standard.set(UserDefaults.standard.integer(forKey:"totalMoneyEarnedLocal") + 1, forKey: "totalMoneyEarnedLocal")
+                            UserDefaults.standard.set(UserDefaults.standard.double(forKey:"totalMoneyEarnedLocal") + moneyIncrementedRandom, forKey: "totalMoneyEarnedLocal")
 
                             Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalSnapsTakenLocal":FieldValue.increment(1.0)])
-                            Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalMoneyEarnedLocal":FieldValue.increment(Double.random(in: 0.1...1.0))])
+                            Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalMoneyEarnedLocal":FieldValue.increment(moneyIncrementedRandom)])
                             showSPAlert = true
                         }
                         else {

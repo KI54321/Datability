@@ -34,12 +34,13 @@ struct DatabilityPersonalInfo: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                     
-                    TextField("+1-408-123-4567", text: $dataTextPhoneNumber)
+                    TextField("+1-xxx-xxx-xxxx", text: $dataTextPhoneNumber)
                         .padding(.all, 10)
                         .background(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 0.2, green: 0.58, blue: 0.9), Color(red: 0.93, green: 0.43, blue: 0.68)]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
                         .textFieldStyle(.plain)
                         .frame(maxWidth: .infinity)
                         .padding()
+                        .keyboardType(.phonePad)
                     
                     Button {
                         continueOnboarding = true
