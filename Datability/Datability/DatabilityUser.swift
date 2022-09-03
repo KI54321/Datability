@@ -18,3 +18,13 @@ struct DatabilityUser: Identifiable, Decodable {
   let totalSnapsTaken: Int
 }
 
+struct Datability: Identifiable, Decodable {
+  @DocumentID var id: String?
+  let fullName: String
+  let challengesCompleted: Int
+  let email: String
+  let moneyTilNextPayment: Double
+  let phoneNumber: String
+  let totalMoneyEarned: Double
+  let totalSnapsTaken: Int
+}
