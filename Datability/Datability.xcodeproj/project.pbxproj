@@ -20,6 +20,10 @@
 		02ABD79A28C2C2ED00A7D455 /* DatabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */; };
 		02ABD79C28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */; };
 		02B8744828C30E2200A0EA2D /* BottomBar-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 02B8744728C30E2200A0EA2D /* BottomBar-SwiftUI */; };
+		02B8744A28C30FE700A0EA2D /* DatabilityChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8744928C30FE700A0EA2D /* DatabilityChallenges.swift */; };
+		02B8744C28C33BBE00A0EA2D /* HomeBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8744B28C33BBE00A0EA2D /* HomeBottomBar.swift */; };
+		02B8744E28C357B000A0EA2D /* DatabilityChallengeExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8744D28C357B000A0EA2D /* DatabilityChallengeExplanation.swift */; };
+		02B8745028C36DCA00A0EA2D /* PlantScannerPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8744F28C36DCA00A0EA2D /* PlantScannerPost.swift */; };
 		02C8E50328C3007600A41A99 /* DatabilityUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50228C3007600A41A99 /* DatabilityUser.swift */; };
 		02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */; };
 		02C8E50728C3027000A41A99 /* DatabilityUserLoginFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E50628C3027000A41A99 /* DatabilityUserLoginFirebase.swift */; };
@@ -64,6 +68,10 @@
 		02ABD79528C2C2ED00A7D455 /* DatabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ABD79928C2C2ED00A7D455 /* DatabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITests.swift; sourceTree = "<group>"; };
 		02ABD79B28C2C2ED00A7D455 /* DatabilityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02B8744928C30FE700A0EA2D /* DatabilityChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityChallenges.swift; sourceTree = "<group>"; };
+		02B8744B28C33BBE00A0EA2D /* HomeBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomBar.swift; sourceTree = "<group>"; };
+		02B8744D28C357B000A0EA2D /* DatabilityChallengeExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityChallengeExplanation.swift; sourceTree = "<group>"; };
+		02B8744F28C36DCA00A0EA2D /* PlantScannerPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantScannerPost.swift; sourceTree = "<group>"; };
 		02C8E50228C3007600A41A99 /* DatabilityUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityUser.swift; sourceTree = "<group>"; };
 		02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabilityProfile.swift; sourceTree = "<group>"; };
 		02C8E50628C3027000A41A99 /* DatabilityUserLoginFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabilityUserLoginFirebase.swift; sourceTree = "<group>"; };
@@ -138,8 +146,12 @@
 				02ABD77A28C2C2E800A7D455 /* SceneDelegate.swift */,
 				02ABD77C28C2C2E800A7D455 /* ViewController.swift */,
 				0201FD7428C2F35900023BEA /* DatabilityPersonalInfo.swift */,
+				02B8744928C30FE700A0EA2D /* DatabilityChallenges.swift */,
+				02B8744D28C357B000A0EA2D /* DatabilityChallengeExplanation.swift */,
+				02B8744B28C33BBE00A0EA2D /* HomeBottomBar.swift */,
 				022BBF2928C2C889009DDA93 /* DatabilityLogin.swift */,
 				02C8E50228C3007600A41A99 /* DatabilityUser.swift */,
+				02B8744F28C36DCA00A0EA2D /* PlantScannerPost.swift */,
 				02C8E50628C3027000A41A99 /* DatabilityUserLoginFirebase.swift */,
 				02C8E50428C3007E00A41A99 /* DatabilityProfile.swift */,
 				02C8E50828C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift */,
@@ -438,14 +450,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B8745028C36DCA00A0EA2D /* PlantScannerPost.swift in Sources */,
 				02C8E50928C308F800A41A99 /* DatabilityFetchFirestoreProfile.swift in Sources */,
 				02ABD77D28C2C2E800A7D455 /* ViewController.swift in Sources */,
 				02ABD77928C2C2E800A7D455 /* AppDelegate.swift in Sources */,
 				02C8E50528C3007E00A41A99 /* DatabilityProfile.swift in Sources */,
+				02B8744E28C357B000A0EA2D /* DatabilityChallengeExplanation.swift in Sources */,
+				02B8744A28C30FE700A0EA2D /* DatabilityChallenges.swift in Sources */,
 				02C8E50728C3027000A41A99 /* DatabilityUserLoginFirebase.swift in Sources */,
 				022BBF2A28C2C889009DDA93 /* DatabilityLogin.swift in Sources */,
 				02ABD77B28C2C2E800A7D455 /* SceneDelegate.swift in Sources */,
 				02C8E50328C3007600A41A99 /* DatabilityUser.swift in Sources */,
+				02B8744C28C33BBE00A0EA2D /* HomeBottomBar.swift in Sources */,
 				0201FD7528C2F35900023BEA /* DatabilityPersonalInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

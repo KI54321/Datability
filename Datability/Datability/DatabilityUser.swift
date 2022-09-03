@@ -8,23 +8,13 @@
 import FirebaseFirestoreSwift
 
 struct DatabilityUser: Identifiable, Decodable {
-  @DocumentID var id: String?
-  let fullName: String
-  let challengesCompleted: Int
-  let email: String
-  let moneyTilNextPayment: Double
-  let phoneNumber: String
-  let totalMoneyEarned: Double
-  let totalSnapsTaken: Int
+    @DocumentID public var id: String?
+    public let fullNameLocal: String
+    public let challengesCompletedLocal: Int
+    public let emailLocal: String
+    public let moneyTilNextPaymentLocal: Double
+    public let phoneNumberLocal: String
+    public let totalMoneyEarnedLocal: Double
+    public let totalSnapsTakenLocal: Int
 }
 
-struct Datability: Identifiable, Decodable {
-  @DocumentID var id: String?
-  let fullName: String
-  let challengesCompleted: Int
-  let email: String
-  let moneyTilNextPayment: Double
-  let phoneNumber: String
-  let totalMoneyEarned: Double
-  let totalSnapsTaken: Int
-}

@@ -16,7 +16,7 @@ struct DatabilityPersonalInfo: View {
     var dataVC: ViewController
     @Binding var shouldPresentPersonalInfo: Bool
     @State var continueOnboarding: Bool = false
-    
+    @Binding var passwordEntered: String
     var body: some View {
         NavigationView {
             GeometryReader { dataProxy in
@@ -82,10 +82,12 @@ struct DatabilityPersonalInfo: View {
                     UserDefaults.standard.set(0.0, forKey: "totalMoneyEarnedLocal")
                     UserDefaults.standard.set(0.0, forKey: "totalSnapsTakenLocal")
                     
-                    DatabilityUserLoginFirebase.uploadUser(dataTextName: dataTextName, dataTextEmail: dataTextEmail, dataTextPhoneNumber: dataTextPhoneNumber)
+                    DatabilityUserLoginFirebase.uploadUser(dataTextName: dataTextName, dataTextEmail: dataTextEmail, dataTextPhoneNumber: dataTextPhoneNumber, password: passwordEntered)
                     
                     shouldPresentPersonalInfo = false
                     dataVC.removeDataHostingView()
+                    dataVC.loadDataChallengesHostingView()
+
                 })
                 
                 .onTapGesture {

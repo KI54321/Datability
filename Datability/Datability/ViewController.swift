@@ -12,20 +12,25 @@ import FirebaseAuth
 class ViewController: UIViewController {
 
     var dataLoginHostingController: UIHostingController<DatabilityLogin>? = nil
-    
+    var dataChallengesHostingController: UIHostingController<HomeBottomBar>? = nil
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         dataLoginHostingController = UIHostingController(rootView: DatabilityLogin(dataVC: self))
-
+        dataChallengesHostingController = UIHostingController(rootView: HomeBottomBar(dataVC: self))
+        
+        
         if Auth.auth().currentUser == nil {
             loadDataHostingView()
         }
         else {
             guard let currentUserID = Auth.auth().currentUser?.uid else { return }
             DatabilityUserLoginFirebase.getUser(currentUserID: currentUserID)
+            
+            loadDataChallengesHostingView()
         }
     }
     
@@ -48,7 +53,25 @@ class ViewController: UIViewController {
             dataLoginHostingController.view.leftAnchor.constraint(equalTo: view.leftAnchor)
         ])
     }
+    func removeDataChallengesView() {
+        guard let dataHostingController = dataChallengesHostingController else { return }
 
+        dataHostingController.removeFromParent()
+        dataHostingController.view.removeFromSuperview()
+    }
+    func loadDataChallengesHostingView() {
+        guard let dataHostingController = dataChallengesHostingController else { return }
+        self.addChild(dataHostingController)
+        view.addSubview(dataHostingController.view)
+        
+        dataHostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            dataHostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            dataHostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            dataHostingController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            dataHostingController.view.leftAnchor.constraint(equalTo: view.leftAnchor)
+        ])
+    }
 
 }
 

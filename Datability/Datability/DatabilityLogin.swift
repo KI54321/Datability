@@ -22,19 +22,22 @@ struct DatabilityLogin: View {
                 
                 
                 VStack {
-                    Spacer()
                     
-                    
-                    TextField("example@gmail.com", text: $dataTextEmail)
+                    Image("datability_logoV2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 300, alignment: .center)
+                        .padding(.bottom, 30).padding(.top, 30)
+                    TextField("Email", text: $dataTextEmail)
                         .padding(.all, 10)
-                        .background(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 0.2, green: 0.58, blue: 0.9), Color(red: 0.93, green: 0.43, blue: 0.68)]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 20).stroke(Color(red: 0.51, green: 0.7, blue: 0.64), lineWidth: 2))
                         .textFieldStyle(.plain)
                         .frame(maxWidth: .infinity)
                         .padding()
                     
-                    TextField("Password123", text: $dataTextPassword)
+                    TextField("Password", text: $dataTextPassword)
                         .padding(.all, 10)
-                        .background(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 0.2, green: 0.58, blue: 0.9), Color(red: 0.93, green: 0.43, blue: 0.68)]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 20).stroke(Color(red: 0.51, green: 0.7, blue: 0.64), lineWidth: 2))
                         .textFieldStyle(.plain)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -75,7 +78,7 @@ struct DatabilityLogin: View {
                 .background(Image("wallpaper")
                     .resizable()
                     .ignoresSafeArea()
-                    .frame(width: dataProxy.size.width, height: dataProxy.size.height, alignment: .center)
+                    .frame(width: 700, height: 800, alignment: .center)
                     .aspectRatio(contentMode: .fit))
                 
                 .JMModal(showModal: $showPermissions, for: [.location, .camera], autoCheckAuthorization: false, restrictDismissal: true, onAppear: {
@@ -83,10 +86,10 @@ struct DatabilityLogin: View {
                 }, onDisappear: {
 
                     dataVC.removeDataHostingView()
+                    dataVC.loadDataChallengesHostingView()
                 })
-                .navigationTitle("Datability")
                 .fullScreenCover(isPresented: $continueOnboarding, content: {
-                    DatabilityPersonalInfo(dataTextEmail: $dataTextEmail, dataVC: dataVC, shouldPresentPersonalInfo: $continueOnboarding)
+                    DatabilityPersonalInfo(dataTextEmail: $dataTextEmail, dataVC: dataVC, shouldPresentPersonalInfo: $continueOnboarding, passwordEntered: $dataTextPassword)
                 })
                 .onTapGesture {
                     UIApplication.shared.resignFirstResponder()

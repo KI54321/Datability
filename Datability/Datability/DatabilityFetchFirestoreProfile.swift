@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
 import UIKit
 
 struct DatabilityFetchFirestoreProfile {
@@ -19,6 +20,7 @@ struct DatabilityFetchFirestoreProfile {
             }
         }
        */
+        
         guard let fullName = UserDefaults.standard.object(forKey: "fullNameLocal") as? String else { return nil }
         guard let challengesCompleted = UserDefaults.standard.object(forKey: "challengesCompletedLocal") as? Int else { return nil }
         guard let email = UserDefaults.standard.object(forKey: "emailLocal") as? String else { return nil }
@@ -28,11 +30,27 @@ struct DatabilityFetchFirestoreProfile {
         guard let totalSnapsTaken = UserDefaults.standard.object(forKey: "totalSnapsTakenLocal") as? Int else { return nil }
 
 
-        return DatabilityUser(fullName: fullName, challengesCompleted: challengesCompleted, email: email, moneyTilNextPayment: moneyTilNextPayment, phoneNumber: phoneNumber, totalMoneyEarned: totalMoneyEarned, totalSnapsTaken: totalSnapsTaken)
+        return DatabilityUser(fullNameLocal: fullName, challengesCompletedLocal: challengesCompleted, emailLocal: email, moneyTilNextPaymentLocal: moneyTilNextPayment, phoneNumberLocal: phoneNumber, totalMoneyEarnedLocal: totalMoneyEarned, totalSnapsTakenLocal: totalSnapsTaken)
                 
-        
         
     }
     
+    public static func fetchDatabilityChallenges(completion: @escaping ([[String:Any]]) -> ()) {
+        Firestore.firestore().collection("challenges").getDocuments { docSnapshots, docError in
+            if docError == nil && docSnapshots != nil {
+                var docSnapshotsData = [[String:Any]]()
+                for oneSnapshot in (docSnapshots?.documents ?? []) {
+                    docSnapshotsData.append(oneSnapshot.data())
+                }
+                
+                completion(docSnapshotsData)
+            }
+            else {
+                completion([])
+            }
+        }
+ 
+        
+    }
     
 }
