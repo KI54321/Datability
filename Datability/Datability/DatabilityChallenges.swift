@@ -38,6 +38,8 @@ struct DatabilityChallenges: View {
                                 .font(.title2)
                                 .fontWeight(.heavy)
                                 .multilineTextAlignment(.leading)
+                                .foregroundColor(Color(red: 0.514, green: 0.698, blue: 0.635))
+                                
                             
                             
                             Spacer()
