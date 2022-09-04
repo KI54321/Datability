@@ -122,7 +122,7 @@ struct DatabilityWithdrawMailComposer: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let balanceMailComposeController = MFMailComposeViewController()
-        balanceMailComposeController.setSubject("Payment of $\(moneyNeeded)")
+        balanceMailComposeController.setSubject("Payment of $\(String(format: "%.2f", moneyNeeded))")
         balanceMailComposeController.setMessageBody("Please send this email to the databilityteam@gmail.com for the amount to be paid.", isHTML: false)
         balanceMailComposeController.setToRecipients(["databilityteam@gmail.com"])
         balanceMailComposeController.mailComposeDelegate = context.coordinator

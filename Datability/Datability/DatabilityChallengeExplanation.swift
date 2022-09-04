@@ -98,6 +98,7 @@ struct DatabilityChallengeExplanation: View {
                                      if !doesHaveCurrentUserEntrie {
                                          
                                          Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["challengesCompletedLocal":FieldValue.increment(1.0)])
+                                         UserDefaults.standard.set(UserDefaults.standard.integer(forKey:"challengesCompletedLocal") + 1, forKey: "challengesCompletedLocal")
 
                                      }
                                  }
