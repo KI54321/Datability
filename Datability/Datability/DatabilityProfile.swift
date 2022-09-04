@@ -33,7 +33,7 @@ struct DatabilityProfile: View {
                         columns: Array(repeating: .init(.flexible(), spacing: 16), count: 2), spacing: 16) {
                             VStack {
                                 Text("\(databaseProfile?.challengesCompletedLocal ?? 0)")
-                                    .font(.system(size:80))
+                                    .font(.system(size:50))
                                     .foregroundStyle(.conicGradient(colors: [.blue, .purple,.pink], center: .trailing, angle: .degrees(0)))
                                 Text("Challenges Participated In")
                                     .multilineTextAlignment(.center)
@@ -41,13 +41,13 @@ struct DatabilityProfile: View {
                             VStack(spacing: 16) {
                                 Spacer()
                                 Text("\(databaseProfile?.totalSnapsTakenLocal ?? 0)")
-                                    .font(.system(size:80))
+                                    .font(.system(size:50))
                                     .foregroundStyle(.conicGradient(colors: [.pink, .orange, .yellow], center: .trailing, angle: .degrees(0)))
                                 Text("Snaps Taken\n")
                             } .offset(y: -8)
                             VStack {
                                 Text("\((databaseProfile?.totalSnapsTakenLocal ?? 0)*100)")
-                                    .font(.system(size:80))
+                                    .font(.system(size:50))
                                     .foregroundStyle(.conicGradient(colors: [Color(red: 0.8, green: 0.267, blue: 0.294), Color(red: 0.875, green: 0.451, blue: 0.451), .white], center: .trailing, angle: .degrees(0)))
                                 Text("Total Points Earned")
                                 Spacer()

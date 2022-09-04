@@ -177,7 +177,7 @@ struct PlantScanner {
     public static func uploadEntries(uuid: StorageReference, latitude: Double, longitude: Double, currentDictChallenge: [String:Any]) {
         guard let currentDictID = currentDictChallenge["id"] as? String else { return }
         guard let currentUserID = Auth.auth().currentUser?.uid as? String else { return }
-        Firestore.firestore().collection("challenges").document(currentDictID).collection("entries").addDocument(data: ["host": currentUserID, "photo": uuid.fullPath, "lat": latitude, "long": longitude])
+        Firestore.firestore().collection("challenges").document(currentDictID).collection("entries").addDocument(data: ["host": currentUserID, "photo": uuid.fullPath, "lat": latitude, "long": longitude, "date": Date().timeIntervalSince1970])
     }
     public static func getPhotoChallengesURL(currentDictChallenge: [String:Any], completion: @escaping (UIImage) -> ()) {
         guard let photosURLString = currentDictChallenge["photoURL"] as? String else {

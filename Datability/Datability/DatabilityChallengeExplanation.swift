@@ -19,7 +19,7 @@ struct DatabilityChallengeExplanation: View {
     @State var databilitySummaryText = ""
     @State var showSPAlert = false
     @State var showSPAlertBad = false
-@State var isProcessingResults = false
+    @State var isProcessingResults = false
     @State var challengePhotoImage: UIImage = UIImage()
     
     var body: some View {
@@ -86,6 +86,22 @@ struct DatabilityChallengeExplanation: View {
 
                             Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalSnapsTakenLocal":FieldValue.increment(1.0)])
                             Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["totalMoneyEarnedLocal":FieldValue.increment(moneyIncrementedRandom)])
+                            // If first time uploading to a challenge, then increment the counter
+                             Firestore.firestore().collection("challenges").document(databilityChallenges["id"] as? String ?? "Error").collection("entries").getDocuments(completion: { allDoccSnapshots, allDoccError in
+                                 if allDoccError == nil && allDoccSnapshots != nil {
+                                     var doesHaveCurrentUserEntrie = false
+                                     for eachDoccSnapshotDocc in (allDoccSnapshots?.documents ?? []) {
+                                         if ((eachDoccSnapshotDocc.get("host") as? String) ?? "ERROR") == (Auth.auth().currentUser?.uid ?? "Auth_ERROR") {
+                                             doesHaveCurrentUserEntrie = true
+                                         }
+                                     }
+                                     if !doesHaveCurrentUserEntrie {
+                                         
+                                         Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "ERROR").updateData(["challengesCompletedLocal":FieldValue.increment(1.0)])
+
+                                     }
+                                 }
+                            })
                             showSPAlert = true
                         }
                         else {
